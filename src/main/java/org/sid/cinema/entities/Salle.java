@@ -1,4 +1,4 @@
-package org.sid.cinema.dao;
+package org.sid.cinema.entities;
 
 import java.util.Collection;
 
@@ -10,6 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ManyToAny;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +26,13 @@ public class Salle {
 	private String name;
 	private int nombrePlace;
 	@ManyToOne
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private Cinema cinema;
 	@OneToMany(mappedBy = "salle")
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private Collection<Place> places;
-	@OneToMany
+	@OneToMany(mappedBy = "salle")
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private Collection<Projection> projections;
 	
 

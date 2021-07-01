@@ -1,4 +1,4 @@
-package org.sid.cinema.dao;
+package org.sid.cinema.entities;
 
 import java.util.Collection;
 
@@ -10,14 +10,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ManyToAny;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 @Entity
+@Data@NoArgsConstructor@AllArgsConstructor
 public class Ville {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private double longitude,latidude,altitude;
-	private int nombreSalles;
-	@OneToMany(mappedBy = "cinema")
+	
+	@OneToMany(mappedBy = "ville")
 	private Collection<Cinema> cinemas;
 	
 
