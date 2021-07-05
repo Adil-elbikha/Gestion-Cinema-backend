@@ -63,9 +63,10 @@ public byte[] image(@PathVariable (name="id")Long id) throws Exception {
 }
 @Data
 class TicketFrom{
-	private List<Long> tickets=new ArrayList<>();
+	
 	private String nomClient;
     private int codePayement;
+    private List<Long> tickets=new ArrayList<>();
     
 }
 

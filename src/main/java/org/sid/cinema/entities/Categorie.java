@@ -23,7 +23,7 @@ public class Categorie {
 	@Column(length = 75)
 	private String name;
 	@OneToMany(mappedBy = "categorie")
-	@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private Collection<Film> films;
 
 }

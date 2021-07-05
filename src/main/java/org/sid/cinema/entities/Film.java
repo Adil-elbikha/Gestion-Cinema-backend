@@ -29,7 +29,7 @@ public class Film {
 	private double duree;
 	private String photo;
 	@OneToMany(mappedBy = "film")
-	@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private Collection<Projection> projections;
 	@ManyToOne
 	private Categorie categorie;
