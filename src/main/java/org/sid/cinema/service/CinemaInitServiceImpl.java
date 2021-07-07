@@ -76,7 +76,7 @@ public  class CinemaInitServiceImpl implements ICinemainitService {
 			.forEach(nameCinema->{
 				Cinema cinema=new Cinema();
 				cinema.setName(nameCinema);
-				cinema.setNamberSalles(3+(int)Math.random()*7);
+				cinema.setNamberSalles(7+(int)Math.random()*7);
 				cinema.setVille(v);
 				cinemaRepository.save(cinema);
 			
